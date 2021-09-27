@@ -1,0 +1,342 @@
+/* doc-cs (DOCument Custom Styles)
+———————————————————————————————————————————————————————— */
+.doc-cs {
+  font: 400 16px/1.7 "Proxima Nova", Mulish, Inter, Arial, Helvetica, sans-serif;
+  letter-spacing: .0125em; word-spacing: .0375em;
+  width: 100%; max-width: 48em;
+  color: #333;
+  background: #fff;
+  word-wrap: break-word;
+  overflow: hidden;
+  outline: 0;
+  margin: 0 auto;
+  padding: 1.5em .5em;
+}
+
+/* Spacing
+———————————————————————————————————————————————————————— */
+.doc-cs p,
+.doc-cs dl,
+.doc-cs ul,
+.doc-cs ol,
+.doc-cs table,
+.doc-cs figure,
+.doc-cs pre {
+  margin-bottom: 1.25em;
+}
+
+.doc-cs dl,
+.doc-cs table,
+.doc-cs figure,
+.doc-cs pre {
+  margin-top: 1em;
+}
+
+/* Link
+———————————————————————————————————————————————————————— */
+.doc-cs a {
+  color: #2559f4;
+}
+
+.doc-cs a:hover, .doc-cs a:focus {
+  color: #044d95;
+  text-decoration: underline 1px;
+}
+
+.doc-cs a:visited {
+  color: #001bb3;
+}
+
+.doc-cs a:active {
+  color: #ffb31a;
+  background-color: #e2e2ff;
+}
+
+.doc-cs a.null {
+  color: #9a1016;
+  cursor: help;
+}
+
+.doc-cs a, .doc-cs a:active, .doc-cs a.null {
+  text-decoration: none;
+}
+
+/* Typography
+———————————————————————————————————————————————————————— */
+.doc-cs h1,
+.doc-cs h2,
+.doc-cs h3,
+.doc-cs h4,
+.doc-cs h5,
+.doc-cs h6 {
+  page-break-after: avoid;
+  font-family: inherit;
+}
+
+.doc-cs h1 { font-weight: 600; line-height: 1.2;  letter-spacing: -.04em;  }
+.doc-cs h2 { font-weight: 700; line-height: 1.25; letter-spacing: -.045em; }
+.doc-cs h3 { font-weight: 700; line-height: 1.25; letter-spacing: -.05em;  }
+.doc-cs h4 { font-weight: 600; line-height: 1.35; letter-spacing: -.055em; }
+.doc-cs h5 { font-weight: 500; line-height: 1.5;  letter-spacing: -.06em;  }
+.doc-cs h6 { font-weight: 500; line-height: 1.6;  letter-spacing: -.06em;  }
+
+.doc-cs p {
+  line-height: 1.7;
+  margin-bottom: 1.25em;
+}
+
+/* List
+———————————————————————————————————————————————————————— */
+.doc-cs dl,
+.doc-cs ul,
+.doc-cs ol {
+  line-height: 1.6;
+  margin-bottom: 1.125em;
+}
+
+.doc-cs ul,
+.doc-cs ol {
+  margin-left: 1em;
+}
+
+.doc-cs ol {
+  counter-reset: ol-counter;
+}
+
+.doc-cs li {
+  position: relative;
+  list-style-type: none;
+  margin-bottom: .6em;
+  padding-left: 1.6em;
+}
+  .doc-cs li::before {
+    position: absolute; top: 0; left: 0;
+    display: block;
+    line-height: inherit;
+    color: inherit;
+    text-align: left;
+  }
+    .doc-cs ul>li::before {
+      content: "•";
+      content: "\25cf";
+    }
+    .doc-cs ol>li::before {
+      content: counter(ol-counter)".";
+      counter-increment: ol-counter;
+    }
+
+.doc-cs ul ul,
+.doc-cs ul ol,
+.doc-cs ol ul,
+.doc-cs ol ol {
+  font-size: .96875em;
+  margin-top: .6em 0 0;
+}
+
+.doc-cs ul.no-style li,
+.doc-cs ol.no-style li {
+  margin-bottom: .25em;
+}
+
+.doc-cs dt {
+  letter-spacing: -.04em;
+}
+
+.doc-cs dd {
+  font-size: .96875em;
+  margin-bottom: .625em;
+  margin-left: 2.5em;
+}
+
+/* Table
+———————————————————————————————————————————————————————— */
+.doc-cs table {
+  font-size: .9375em;
+  border: 0;
+}
+  .doc-cs table caption {
+    font-size: .933em;
+    padding-bottom: 0;
+  }
+
+.doc-cs th,
+.doc-cs td {
+  border: 2px solid #fff;
+  padding: .5em .5em;
+  color: #444;
+}
+
+.doc-cs thead th,
+.doc-cs thead td {
+  background-color: #f0f0f4;
+  padding: .5em .5em .25em;
+  box-shadow: inset 0px -8px 2px #e8e9f0;
+}
+
+.doc-cs tfoot th,
+.doc-cs tfoot td {
+  background-color: #f9f9fb;
+  padding: .5em .5em .25em;
+  box-shadow: inset 0px 1px 8px #ddd;
+  border-bottom: 1px solid #e8e9ff;
+}
+
+.doc-cs tbody td {
+  background-color: #fff;
+  box-shadow: inset 0px -1px 4px #e8e9ff;
+}
+
+.doc-cs tbody tr:nth-child(even) td {
+  background-color: #f7f7f7;
+}
+
+.doc-cs table.unstriped tbody td {
+  background-color: #fff;
+}
+
+/* Blockquote
+———————————————————————————————————————————————————————— */
+.doc-cs blockquote {
+  font-size: .9375em;
+  color: #34444c;
+  background-color: #f1f3f4;
+  border: none;
+  padding: .5em 1em;
+}
+  .doc-cs blockquote > * {
+    color: inherit;
+    margin: .625em 0;
+  }
+
+.doc-cs blockquote ~ figcaption {
+  font-size: .8750em;
+  font-weight: 500;
+  color: #fff;
+  background-color: #818d98;
+  margin-top: -1.3em;
+  padding: .375em 1em;
+}
+
+/* Code
+———————————————————————————————————————————————————————— */
+.doc-cs pre,
+.doc-cs var,
+.doc-cs samp,
+.doc-cs kbd,
+.doc-cs code {
+  letter-spacing: 0;
+}
+
+.doc-cs pre {
+  background-color: #f1f4ff;
+  border: .0625em solid #e8e9ff;
+}
+
+.doc-cs code,
+.doc-cs samp,
+.doc-cs var {
+  background-color: #f0f0f4;
+  border: 0;
+}
+
+.doc-cs pre > code {
+  background-color: inherit;
+  border: 0;
+}
+
+/* Markcard
+———————————————————————————————————————————————————————— */
+/*  Default  */
+.doc-cs .markcard {
+  font-size: .9375em;
+  background-color: #f1f3f4;
+  border-left: .4em solid #78798a;
+  margin: 1em 0;
+  padding: .3125em 1em;
+}
+  .doc-cs ul .markcard,
+  .doc-cs ol .markcard,
+  .doc-cs div .markcard {
+    font-size: inherit;
+  }
+
+.doc-cs .markcard h4 {
+  font-size: 1.125em;
+  font-weight: 600;
+}
+.doc-cs .markcard > * {
+  margin: .625em 0;
+  line-height: 1.6;
+}
+.doc-cs .markcard :first-child {
+  margin-top: .25em;
+}
+.doc-cs .markcard :last-child {
+  margin-bottom: .8em;
+}
+
+.doc-cs .markcard.note {
+  background-color: #dff;
+  border-left: .4em solid #0091ea;
+}
+.doc-cs .markcard.tip {
+  background-color: #dfd;
+  border-left: .4em solid #64dd17;
+}
+.doc-cs .markcard.warning {
+  background-color: #ffc;
+  border-left: .4em solid #ffd600;
+}
+.doc-cs .markcard.danger {
+  background-color: #fdd;
+  border-left: .4em solid #d50000;
+}
+
+/* Additional code
+———————————————————————————————————————————————————————— */
+.doc-cs pre.notranslate,
+.doc-cs pre.command-line {
+  word-wrap: normal;
+  -webkit-font-smoothing: auto;
+}
+
+.doc-cs pre.notranslate {
+  color: #212121;
+  background-color: #f1f3f4;
+  border: 1px solid #e8e9ff;
+}
+  .doc-cs pre.notranslate * {
+    color: inherit !important;
+    background: inherit !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+.doc-cs pre.command-line {
+  color: #f2f2f2;
+  background-color: #2f3439;
+  border: 2px solid #c2c8ca;
+  padding: .56em;
+}
+  .doc-cs pre.command-line .command::before {
+    color: #ffffff; content: "$"; padding-right: .56em;
+  }
+  .doc-cs pre.command-line .root::before {
+    color: #b71c1c; content: "#"; padding-right: .56em;
+  }
+  .doc-cs pre.command-line .comment {
+    color: #aaaaaa; font-style: italic;
+  }
+  .doc-cs pre.command-line .output {
+    color: #00b34a;
+  }
+
+/* doc-cs.alt
+———————————————————————————————————————————————————————— */
+.doc-cs.alt h1,
+.doc-cs.alt h2 {
+  font-family: "Roboto Slab", Rokkitt, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500;
+  padding-bottom: .1em;
+  border-bottom: 1px solid;
+}

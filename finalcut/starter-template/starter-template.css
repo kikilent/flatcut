@@ -1,0 +1,418 @@
+/* Brand
+———————————————————————————————————————————————————————— */
+.brand {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+  .brand .brand-icon {
+    max-width: 2.8em;
+    max-height: 2.8em;
+    margin-right: .8em;
+  }
+  .brand .brand-title {
+    font-size: 3.4em;
+    font-weight: 700;
+    font-family: Rokkitt, sans-serif;
+    letter-spacing: .041em;
+    color: #202c2d;
+    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, 1px 2px #808d93, -2px 1px #cdd2d5, 2px 3px #808d93, -3px 2px #cdd2d5;
+    margin: 0;
+  }
+
+/* Header
+———————————————————————————————————————————————————————— */
+/* NOTE: Font size is based on 10px */
+.page-header {
+  font-size: .625em;
+  line-height: 1.8;
+  background: transparent;
+}
+  .page-header.accent {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #eff0f2;
+    /* box-shadow: inset 0 -1px 0 #e2e2e9, inset 0 -1.6em 2.4em -1.2em #a49da566; */
+  }
+
+.page-header .container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: .4em 1em;
+}
+  @media (min-width: 992px) {
+    .page-header .container {
+      flex-flow: nowrap;
+      padding: 0 6em;
+    }
+  }
+
+/* => Icommon */
+header .icon::before {
+  font-family: "icomoon" !important;
+}
+
+/* => Navbar | Mobile */
+.hamburger-menu::before {
+  content: "\e9bd";
+  font-size: 2.6em;
+}
+
+.hamburger-menu.expanded {
+  position: relative;
+  top: 0;
+  z-index: 98;
+  margin: 0;
+  transition: all 0.5s ease-in-out 0s;
+}
+  .hamburger-menu.expanded::before {
+    content: "\ea0f";
+    font-size: 2.2em;
+  }
+
+.page-header-main {
+  display: grid;
+  font-family: Mulish, Raleway, Inter, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+  @media (max-width: 991px) {
+    .page-header-main {
+      overflow: auto;
+      grid-template-rows: auto 1fr;
+      gap: 1.6em;
+      width: auto;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 99;
+      background: #f9f9fb;
+      box-shadow: -1px 0 0 #cac0e8, inset 16px 0 25px -12px rgba(240, 240, 244, .6);
+      padding: 2em;
+      transform: translateX(100%);
+      transition: all 0.3s ease-in-out 0s;
+    }
+      .page-header-main .main-nav { grid-row: 2/3; }
+      .page-header-main .main-search { grid-row: 1/2; }
+      .page-header-main.expanded { transform: translateX(0); }
+  }
+
+.main-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu,
+.nav-item {
+  list-style: none;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item > a,
+.dropdown-item > a {
+  display: flex;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #606e77;
+  white-space: nowrap;
+  padding: .4em .6em;
+}
+  .nav-item:hover > a,
+  .dropdown-item:hover > a {
+    color: #0e1b20;
+    background-color: #eaeff0;
+  }
+
+/* Dropdown */
+.dropdown-container {
+  display: none;
+  border-top: 2px solid #80a1a6;
+  margin: .6em 1.5em;
+}
+
+.dropdown-list {
+  flex-flow: column;
+}
+
+.dropdown-block {
+  margin: 1em 0;
+}
+
+.dropdown-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: inherit;
+  letter-spacing: .1em;
+  margin: 0;
+  padding: 0 .6em;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-item > a {
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: .030em;
+  opacity: .9;
+}
+
+.dropdown-container.active {
+  display: flex;
+}
+
+/* => Navbar | Desktop */
+@media (min-width: 992px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .page-header-main {
+    grid-template-columns: 50% 1fr 2fr;
+    gap: 0 1.6em;
+    align-items: center;
+    justify-content: space-between;
+  }
+    .page-header-main .main-nav {
+      grid-column: 1/3;
+      justify-self: end;
+    }
+    .page-header-main .main-search {
+      grid-column: 3/4;
+    }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-item > a {
+    padding: .8em .6em;
+    position: relative;
+    justify-content: space-around;
+  }
+    .nav-item:hover > a {
+      background: none;
+    }
+
+  .nav-item > a::before {
+    content: "";
+    width: 100%;
+    height: .2667em;
+    position: absolute;
+    bottom: -.1333em;
+    background: #0e1b20;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+    .nav-item:hover > a::before {
+      transform: scaleX(1);
+    }
+
+  /* Dropdown */
+  .dropdown-container {
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    top: calc(100% + .2em);
+    right: 50%;
+    z-index: 99;
+    background: #f7fcfccc;
+    box-shadow: inset 0 0 24px #eaeceb99, 0 -4px 0 #0e1b20;
+    border: 0;
+    margin: 0;
+    transition: all 0.5s;
+    transform: translateX(50%) scaleX(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+    .dropdown:hover > .dropdown-container {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(50%) scaleX(1);
+    }
+
+  .dropdown-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: inherit;
+    text-align: center;
+    box-shadow: 0 1px 0 -1px #aaa;
+    padding: 0;
+  }
+
+  .dropdown-item > a {
+    color: #0e1b20;
+    font-weight: 600;
+    padding: .4em 2em;
+  }
+}
+
+/* => Header search */
+.main-search {
+  margin: 0;
+  padding: 0 .6em;
+}
+
+.search-widget {
+  display: flex;
+  width: 100%;
+  min-width: 20em;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 4px #9daecc;
+  padding: 0;
+  border-radius: .2em;
+  z-index: 1;
+}
+  .search-widget .input-field {
+    font-size: 1.5em;
+    width: 100%;
+    height: 2.4em;
+    margin: 0;
+    padding: 0;
+    padding-left: 1em;
+    padding-right: 4em;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+  }
+    .search-widget .input-field:hover,
+    .search-widget .input-field:focus {
+      box-shadow: 0 2px 8px #9daecc;
+      transition: 0s;
+    }
+
+  .search-widget .search-button,
+  .search-widget .clear-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    z-index: 2;
+  }
+
+  .search-widget .search-button {
+    color: #0c7bbf;
+    padding: 0 .8em;
+    transition: 0.3s;
+  }
+    .search-widget .icon.search-button::before {
+      content: "\e986";
+      font-size: 1.4em;
+    }
+
+  .search-widget .clear-button {
+    margin-right: 3.4em;
+    color: #383B45bb;
+  }
+    .search-widget .icon.clear-button::before {
+      content: "\ea0d";
+      font-size: 1.4em;
+      color: red;
+      padding-right: 1em;
+      border-right: 1px solid #383B4588;
+    }
+
+/* Page Content
+———————————————————————————————————————————————————————— */
+.page-content {
+  margin: 5em auto;
+}
+
+/* Footer
+———————————————————————————————————————————————————————— */
+/* NOTE: Font size is based on 10px */
+.page-footer {
+  font-size: .625em;
+  color: var(--titanium-dioxide);
+  background: var(--brilliant-black);
+  margin-top: 8em;
+}
+  .page-footer a {
+    font-size: inherit;
+    font-weight: 600;
+    color: #ccc;
+  }
+    .page-footer a:hover {
+      color: #fff;
+    }
+
+/* => Main footer */
+.page-footer-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em 1em;
+  padding: 2em 3em;
+}
+  .footer-brand { grid-column: span 2;}
+  
+  @media only screen and (min-width: 576px) {
+    .page-footer-main { grid-template-columns: 1fr 1fr 35%; }
+    .footer-brand { grid-column: span 3;}
+    .contact { justify-self: end; }
+  }
+  @media only screen and (min-width: 768px) {
+    .page-footer-main { grid-template-columns: 35% 1fr 1fr 1.5fr; }
+    .footer-brand { grid-column: 1/2; }
+    .sitemap, .contact { justify-self: center; }
+  }
+
+.brand-info {
+  font-size: 1.4em;
+  margin-top: .5em;
+}
+
+.sitemap-menu {
+  list-style: none;
+  margin: 0;
+}
+
+.sitemap .footer-link,
+.contact-info {
+  font-size: 1.4em;
+  color: #909a96;
+}
+
+/* Footer bottom */
+.license {
+  display: flex;
+  background-color: #1b191b;
+  border-top: 1px solid #29272a;
+  padding: 2em 0;
+}
+  .license * {
+    margin: 0;
+  }
+
+.copyright {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-right: auto;
+  padding-left: 2em;
+}
+
+.legal {
+  font-size: 1.4em;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+  padding-right: 2em;
+}
+  .legal a {
+    font-weight: 700;
+    margin-left: 2em;
+  }
